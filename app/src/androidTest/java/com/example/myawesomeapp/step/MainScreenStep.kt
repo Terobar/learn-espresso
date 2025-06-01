@@ -7,14 +7,14 @@ import com.example.myawesomeapp.element.MainScreenElement
 
 class MainScreenStep {
     private val mainElement = MainScreenElement()
-    private val menuBtn = MainScreenElement()
+    private val menuButton = MainScreenElement()
 
     fun checkMainScreenTextIsDisplayed() {
         mainElement.mainScreenText().check(matches(isDisplayed()))
     }
 
     fun clickOnMenuButton() {
-        menuBtn.menuButton()
+        menuButton.menuButton()
             .check(matches(isDisplayed()))
             .perform(click())
     }
