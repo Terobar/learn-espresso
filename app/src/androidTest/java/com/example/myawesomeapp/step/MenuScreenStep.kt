@@ -9,7 +9,7 @@ class MenuScreenStep {
     private val slideshowBtn = MenuScreenElement()
 
     fun clickOnSlideshowButton() {
-        slideshowBtn.slideshowButton()
+        slideshowButton.slideshowButton()
             .check(matches(isDisplayed()))
             .perform(click())
     }
