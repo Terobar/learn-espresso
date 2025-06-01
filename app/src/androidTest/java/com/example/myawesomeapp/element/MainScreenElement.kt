@@ -21,4 +21,9 @@ class MainScreenElement {
                 withText("This is home Fragment")
             )
         )
+
+    fun mailButton(): ViewInteraction =
+        onView(
+            withId(R.id.fab)
+        )
 }
