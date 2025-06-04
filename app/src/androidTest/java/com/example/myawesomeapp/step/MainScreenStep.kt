@@ -18,10 +18,4 @@ class MainScreenStep {
             .check(matches(isDisplayed()))
             .perform(click())
     }
-
-    fun clickOnMailButton() {
-        mainElement.mailButton()
-            .check(matches(isDisplayed()))
-            .perform(click())
-    }
 }
