@@ -8,15 +8,34 @@ import com.example.myawesomeapp.element.ToolbarElement
 class ToolbarStep {
     private val toolbarElement = ToolbarElement()
 
-    fun clickOnMenuButton() {
-        toolbarElement.menuButton()
+    fun clickOnToolbarMenuButton(){
+        toolbarElement.toolbarMenuButton()
             .check(matches(isDisplayed()))
             .perform(click())
     }
 
-    fun checkToolbarElements() {
-        toolbarElement.menuButton().check(matches(isDisplayed()))
-        toolbarElement.menuHeading().check(matches(isDisplayed()))
-        toolbarElement.menuOptionsButton().check(matches(isDisplayed()))
+    fun checkToolbarMenuButtonIsDisplayed() {
+        toolbarElement.toolbarMenuButton()
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkToolbarMenuOptionsButtonIsDisplayed() {
+        toolbarElement.toolbarMenuOptionsButton()
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkHomeToolbarIsDisplayed() {
+        toolbarElement.toolbarMenuHeading()
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkGalleryToolbarIsDisplayed() {
+        toolbarElement.toolbarMenuHeading()
+            .check(matches(isDisplayed()))
+    }
+
+    fun checkSlideshowToolbarIsDisplayed() {
+        toolbarElement.toolbarMenuHeading()
+            .check(matches(isDisplayed()))
     }
 }

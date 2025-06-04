@@ -20,7 +20,7 @@ class MenuScreenStep {
         menuElement.userName().check(matches(isDisplayed()))
         menuElement.userEmail().check(matches(isDisplayed()))
         menuElement.homeButton().check(matches(isDisplayed()))
-        menuElement.galleryButton().check(matches(isDisplayed()))
+        menuElement.menuGalleryButton().check(matches(isDisplayed()))
         menuElement.slideshowButton().check(matches(isDisplayed()))
     }
 
@@ -28,5 +28,9 @@ class MenuScreenStep {
         slideshowButton.slideshowButton()
             .check(matches(isDisplayed()))
             .perform(click())
+    }
+
+    fun clickMenuGalleryButton() {
+        menuElement.menuGalleryButton().check(matches(isDisplayed())).perform(click())
     }
 }

@@ -39,13 +39,14 @@ class MenuScreenElement {
             )
         )
 
-    fun galleryButton(): ViewInteraction =
-        onView(
+    fun menuGalleryButton(): ViewInteraction {
+        return onView(
             allOf(
-                withId(R.id.nav_gallery),
-                hasDescendant(withText(R.string.menu_gallery))
+                withText(R.string.menu_gallery),
+                isDescendantOfA(withId(R.id.nav_gallery))
             )
         )
+    }
 
     fun slideshowButton(): ViewInteraction =
         onView(

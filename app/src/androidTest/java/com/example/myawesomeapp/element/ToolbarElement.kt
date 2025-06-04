@@ -10,19 +10,20 @@ import com.example.myawesomeapp.R
 import org.hamcrest.core.AllOf.allOf
 
 class ToolbarElement {
-    fun menuButton(): ViewInteraction =
+    fun toolbarMenuButton(): ViewInteraction =
         onView(
             withContentDescription("Open navigation drawer")
         )
 
-    fun menuHeading(): ViewInteraction =
+    fun toolbarMenuHeading(): ViewInteraction =
         onView(
             allOf(
                 withText(R.string.menu_home),
                 isDescendantOfA(withId(R.id.toolbar))
             )
         )
-    fun menuOptionsButton(): ViewInteraction =
+
+    fun toolbarMenuOptionsButton(): ViewInteraction =
         onView(
             withContentDescription("More options")
         )

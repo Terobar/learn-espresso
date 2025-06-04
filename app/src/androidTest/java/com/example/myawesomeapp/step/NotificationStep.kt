@@ -1,23 +1,46 @@
 package com.example.myawesomeapp.step
 
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.swipeRight
-import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import com.example.myawesomeapp.element.MailButtonElement
 import com.example.myawesomeapp.element.NotificationElement
 
 class NotificationStep {
     private val notificationElement = NotificationElement()
+    private val mailButtonElement = MailButtonElement()
 
-    fun checkNotificationPopupIsDisplayed() {
-        notificationElement.notificationPopup().check(matches(isDisplayed()))
+    fun checkMailButtonNotificationIsDisplayed(){
+        mailButtonElement.mailButtonNotification()
+            .check(matches(isDisplayed()))
     }
 
-    fun swipeNotificationPopup() {
-        notificationElement.notificationPopup().perform(swipeRight())
+    fun swipeMailButtonNotification(){
+        mailButtonElement.mailButtonNotification()
+            .check(matches(isDisplayed()))
+            .perform(swipeRight())
     }
 
-    fun checkNotificationPopupIsNotDisplayed() {
-        notificationElement.notificationPopup().check(doesNotExist())
+    fun checkGalleryNotificationTextIsDisplayed(position: String) {
+        notificationElement.notificationText("Item #$position clicked successfully!")
+            .check(matches(isDisplayed()))
+    }
+
+    fun swipeGalleryNotificationPopup() {
+        notificationElement.notificationPopup()
+            .check(matches(isDisplayed()))
+            .perform(swipeRight())
+    }
+
+    fun checkMailButtonIsDisplayed(){
+        mailButtonElement.mailButton()
+            .check(matches(isDisplayed()))
+    }
+
+    fun clickMailButton(){
+        mailButtonElement.mailButton()
+            .check(matches(isDisplayed()))
+            .perform(click())
     }
 }
