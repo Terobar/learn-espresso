@@ -9,16 +9,11 @@ import com.example.myawesomeapp.element.GalleryElement
 class GalleryScreenStep {
     private val galleryElement = GalleryElement()
 
-    fun checkGalleryRecycleViewIsDisplayed() {
-        galleryElement.galleryRecycleView()
-            .check(matches(isDisplayed()))
-    } //Лучше объединить в один метод принимающий параметр позиции
-
-    fun clickGalleryItemAtPosition(position: String) {
-        galleryElement.galleryItemList(position)
-            .check(matches(isDisplayed()))
-            .perform(click())
-    } //Лучше объединить в один метод принимающий параметр позиции
+    fun interactWithGalleryItem(position: String, performClick: Boolean = false) {
+        val item = galleryElement.galleryItemList(position)
+        item.check(matches(isDisplayed()))
+        if (performClick) item.perform(click())
+    }
 
     fun swipeGalleryRecycleView() {
         galleryElement.galleryRecycleView()

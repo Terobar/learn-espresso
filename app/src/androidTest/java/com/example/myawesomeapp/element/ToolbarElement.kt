@@ -12,7 +12,7 @@ import org.hamcrest.core.AllOf.allOf
 class ToolbarElement {
     fun toolbarMenuButton(): ViewInteraction =
         onView(
-            withContentDescription("Open navigation drawer")
+            withContentDescription(R.string.navigation_drawer_open)
         )
 
     fun toolbarMenuHeading(): ViewInteraction =
@@ -25,6 +25,14 @@ class ToolbarElement {
 
     fun toolbarMenuOptionsButton(): ViewInteraction =
         onView(
-            withContentDescription("More options")
+            withContentDescription(R.string.action_settings)
+        )
+
+    fun toolbarTitle(title: String): ViewInteraction =
+        onView(
+            allOf(
+                withText(title),
+                isDescendantOfA(withId(R.id.toolbar))
+            )
         )
 }

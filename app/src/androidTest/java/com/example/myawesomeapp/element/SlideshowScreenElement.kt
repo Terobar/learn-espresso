@@ -15,12 +15,4 @@ class SlideshowScreenElement {
                 withText("This is slideshow Fragment")
             )
         )
-
-    fun toolbarTitle(): ViewInteraction =
-        onView(
-            allOf(
-                withId(R.id.toolbar_title),
-                withText("SlideShow")
-            )
-        )
 }

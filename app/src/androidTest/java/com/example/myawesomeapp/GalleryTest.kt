@@ -33,12 +33,12 @@ class GalleryTest {
         toolbar.clickOnToolbarMenuButton()
         menu.clickMenuGalleryButton()
         toolbar.checkToolbarTitle("Gallery")
-        gallery.checkGalleryRecycleViewIsDisplayed()
-        gallery.clickGalleryItemAtPosition("1")
+        gallery.interactWithGalleryItem("1")
+        gallery.interactWithGalleryItem("1", performClick = true)
         notification.checkGalleryNotificationTextIsDisplayed("1")
         notification.swipeGalleryNotificationPopup()
         gallery.swipeGalleryRecycleView()
-        gallery.clickGalleryItemAtPosition("10")
+        gallery.interactWithGalleryItem("10", performClick = true)
         notification.checkGalleryNotificationTextIsDisplayed("10")
     }
 

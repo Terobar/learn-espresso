@@ -24,18 +24,8 @@ class ToolbarStep {
             .check(matches(isDisplayed()))
     }
 
-    fun checkHomeToolbarIsDisplayed() {
-        toolbarElement.toolbarMenuHeading()
-            .check(matches(isDisplayed()))
-    }
-
-    fun checkGalleryToolbarIsDisplayed() {
-        toolbarElement.toolbarMenuHeading()
-            .check(matches(isDisplayed()))
-    }
-
-    fun checkSlideshowToolbarIsDisplayed() {
-        toolbarElement.toolbarMenuHeading()
+    fun checkToolbarTitle(title: String) {
+        toolbarElement.toolbarTitle(title)
             .check(matches(isDisplayed()))
     }
 }
