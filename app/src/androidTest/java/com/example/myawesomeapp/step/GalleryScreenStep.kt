@@ -10,22 +10,15 @@ class GalleryScreenStep {
     private val galleryElement = GalleryElement()
 
     fun checkGalleryRecycleViewIsDisplayed() {
-        Thread.sleep(1000)
         galleryElement.galleryRecycleView()
             .check(matches(isDisplayed()))
-    }
+    } //Лучше объединить в один метод принимающий параметр позиции
 
-    fun clickGalleryItemListFirstPosition() {
-        galleryElement.galleryItemList("1")
+    fun clickGalleryItemAtPosition(position: String) {
+        galleryElement.galleryItemList(position)
             .check(matches(isDisplayed()))
             .perform(click())
-    }
-
-    fun clickGalleryItemListTenthPosition() {
-        galleryElement.galleryItemList("10")
-            .check(matches(isDisplayed()))
-            .perform(click())
-    }
+    } //Лучше объединить в один метод принимающий параметр позиции
 
     fun swipeGalleryRecycleView() {
         galleryElement.galleryRecycleView()

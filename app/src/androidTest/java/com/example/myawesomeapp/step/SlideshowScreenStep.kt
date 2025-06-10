@@ -10,4 +10,8 @@ class SlideshowScreenStep {
     fun checkSlideshowScreenTextIsDisplayed() {
         slideshowScreen.slideshowScreenText().check(matches(isDisplayed()))
     }
+
+    fun checkToolbarTitleIsDisplayed() {
+        slideshowScreen.toolbarTitle().check(matches(isDisplayed()))
+    }
 }

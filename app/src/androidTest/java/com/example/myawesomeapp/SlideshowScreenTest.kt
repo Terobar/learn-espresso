@@ -31,7 +31,7 @@ class SlideshowScreenTest {
         slideshowButton.clickOnSlideshowButton()
         toolbar.checkToolbarMenuButtonIsDisplayed()
         toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
-        toolbar.checkSlideshowToolbarIsDisplayed()
+        toolbar.checkToolbarTitle("SlideShow")
         slideshowScreenText.checkSlideshowScreenTextIsDisplayed()
     }
 

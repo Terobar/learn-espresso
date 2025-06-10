@@ -26,19 +26,19 @@ class GalleryTest {
     }
 
     @Test
-    fun checkNotificationOnGalleryScreen(){
+    fun checkNotificationOnGalleryScreen() {
+        toolbar.checkToolbarMenuButtonIsDisplayed()
+        toolbar.checkToolbarTitle("Home")
+        toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
         toolbar.clickOnToolbarMenuButton()
         menu.clickMenuGalleryButton()
-        toolbar.checkToolbarMenuButtonIsDisplayed()
-        toolbar.checkHomeToolbarIsDisplayed()
-        toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
-        toolbar.checkGalleryToolbarIsDisplayed()
+        toolbar.checkToolbarTitle("Gallery")
         gallery.checkGalleryRecycleViewIsDisplayed()
-        gallery.clickGalleryItemListFirstPosition()
+        gallery.clickGalleryItemAtPosition("1")
         notification.checkGalleryNotificationTextIsDisplayed("1")
         notification.swipeGalleryNotificationPopup()
         gallery.swipeGalleryRecycleView()
-        gallery.clickGalleryItemListTenthPosition()
+        gallery.clickGalleryItemAtPosition("10")
         notification.checkGalleryNotificationTextIsDisplayed("10")
     }
 

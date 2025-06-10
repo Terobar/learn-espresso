@@ -11,7 +11,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class MenuScreenTestTest {
+class MenuScreenTest {
     private lateinit var scenario: ActivityScenario<MainActivity>
 
     private val menu = MenuScreenStep()
@@ -25,9 +25,10 @@ class MenuScreenTestTest {
 
     @Test
     fun checkMenuScreen() {
-        toolbar.clickOnToolbarMenuButton()
         toolbar.checkToolbarMenuButtonIsDisplayed()
+        toolbar.checkToolbarTitle("Home")
         toolbar.checkToolbarMenuOptionsButtonIsDisplayed()
+        toolbar.clickOnToolbarMenuButton()
         menu.checkMenuElementsAreDisplayed()
         menu.clickOnHomeButton()
         main.checkMainScreenTextIsDisplayed()
