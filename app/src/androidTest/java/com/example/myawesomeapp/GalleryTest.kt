@@ -33,7 +33,6 @@ class GalleryTest {
         toolbar.clickOnToolbarMenuButton()
         menu.clickMenuGalleryButton()
         toolbar.checkToolbarTitle("Gallery")
-        gallery.interactWithGalleryItem("1")
         gallery.interactWithGalleryItem("1", performClick = true)
         notification.checkGalleryNotificationTextIsDisplayed("1")
         notification.swipeGalleryNotificationPopup()
